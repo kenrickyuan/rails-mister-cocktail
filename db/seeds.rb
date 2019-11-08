@@ -107,3 +107,11 @@ Ingredient.create(name: "Creme de Cassis")
 Ingredient.create(name: "Jack Daniels")
 
 puts "done!"
+
+puts "Destroying past cocktails"
+
+Cocktail.destroy_all
+
+puts "creating Cocktails"
+
+Cocktail.create()
