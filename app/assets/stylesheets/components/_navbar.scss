@@ -1,12 +1,29 @@
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
-  background: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: transparent;
+  transition: 0.5s background-color ease;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-white {
+  background-color: white;
+}
+
+.navbar .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.logo-navbar {
+  background-image: asset-url('logo.png');
+  background-size: cover;
+  height: 42px;
+  width: 263px;
+}
+
+.searchbar-navbar {
+  background-image: asset-url('searchbar.png');
+  background-size: cover;
+  height: 40px;
+  width: 242px;
 }

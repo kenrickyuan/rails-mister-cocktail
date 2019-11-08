@@ -1,0 +1,32 @@
+<div class="home-banner">
+  <%= image_tag "banner.png", class: "home-banner-img", alt: "Cocktail Hut", height: 366, width: 366 %>
+  <h1 class="home-banner-h1">Cocktail Hut</h1>
+  <%= link_to "Create a cocktail!", new_cocktail_path, class: "btn btn-banner" %>
+  <h2 class="home-banner-h2">Or scroll down to browse cocktails</h2>
+  <%= image_tag "scroll.png", class: "home-banner-scroll", alt: "Scroll Down", height: 30, width: 36 %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="cocktail-index-title">All our cocktails (<%= @cocktails.count %>)</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-4">
+      <div class="cocktail-card">
+        <div class="cocktail-card-image" style="background-image: url(<%= cocktail.image_url %>)"></div>
+        <div class="cocktail-card-content">
+          <h4 class="cocktail-card-title"><%= cocktail.name %></h4>
+        </div>
+        <div class="cocktail-card-actions">
+          <a href="<%= cocktail_path(cocktail) %>">Ingredients</a>
+          <a data-confirm="Are you sure?" class="ml-3 text-danger" rel="nofollow" data-method="delete" href="/cocktails/<%= cocktail.id %>">Remove</a>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

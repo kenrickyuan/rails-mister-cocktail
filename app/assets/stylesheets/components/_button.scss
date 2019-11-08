@@ -1,0 +1,35 @@
+.btn-cocktail {
+  background-image: asset-url('button-cocktail-active.png');
+  background-size: cover;
+  height: 22px;
+  width: 17px;
+}
+
+.btn-cocktail:hover {
+  background-image: asset-url('button-cocktail-hover.png');
+  background-size: cover;
+  height: 22px;
+  width: 17px;
+}
+
+.btn-banner {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 41px;
+  color: #FFFFFF;
+  transition: background 0.3s ease;
+  background: #E64C3C;
+  opacity: 0.9;
+  border-radius: 34px;
+  width: 372px;
+  height: 68px;
+  padding-top: 0.6rem;
+  margin-bottom: 3rem;
+}
+
+.btn-banner:hover {
+  opacity: 1;
+  color: #FFFFFF;
+}

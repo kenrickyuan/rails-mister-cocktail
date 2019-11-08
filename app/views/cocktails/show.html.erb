@@ -1,0 +1,24 @@
+<div class="container">
+  <h1><%= @cocktail.name %></h1>
+  <img src="<%= @cocktail.image_url %>" alt="Image of <%= @cocktail.name %>" style="width: 500px">
+  <%= link_to 'Destroy recipe', cocktail_path(@cocktail), data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-danger" %>
+  <p> --------------------------------------------------------------- </p>
+  <p>Ingredients:</p>
+  <p> --------------------------------------------------------------- </p>
+  <ol>
+  <% @cocktail.doses.each do |dose| %>
+  <% id = dose[:ingredient_id] %>
+    <li><%= dose[:description] %> of <%= Ingredient.find(id)[:name] %></li>
+    <%= link_to 'Destroy ingredient', cocktail_dose_path(@cocktail, dose), data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-danger" %>
+  <% end %>
+  </ol>
+  <p> --------------------------------------------------------------- </p>
+
+  <p>Add a dose:</p>
+
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient %>
+  <%= f.submit "add a dose", class: "btn btn-primary" %>
+  <% end %>
+</div>
